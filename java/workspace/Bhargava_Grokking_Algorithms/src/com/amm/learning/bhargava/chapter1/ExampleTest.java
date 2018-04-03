@@ -1,5 +1,7 @@
 package com.amm.learning.bhargava.chapter1;
 
+import com.amm.learning.bhargava.utils.ConvertUtils;
+
 public class ExampleTest {
 
 	public static void test() {
@@ -18,20 +20,9 @@ public class ExampleTest {
 		
 		BinarySearch binarySearch = new BinarySearch(array, number);
 		
-		StringBuilder arrayOutput = new StringBuilder("{");
-		
-		for (int i = 0; i < array.length; ++i) {
-			arrayOutput.append(array[i]);
-			
-			if (i != array.length - 1) {
-				arrayOutput.append(',');
-			}
-		}
-		
-		arrayOutput.append("}");
-		
-		System.out.println("Test array: " + arrayOutput.toString());
+		System.out.println("Test array: " + ConvertUtils.arrayAsString(array));
 		System.out.println("Test wanted number: " + number);
 		System.out.println("Result: " + binarySearch.doSearch());
 	}
+	
 }
