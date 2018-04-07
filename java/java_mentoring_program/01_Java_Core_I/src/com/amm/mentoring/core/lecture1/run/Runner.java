@@ -94,6 +94,10 @@ public class Runner {
 		
 		// 7. FINALLY
 		// Always except System.exit(0);
+		// Note: If the JVM exits while the try or catch code is being executed, 
+		// then the finally block may not execute. Likewise, if the thread executing 
+		// the try or catch code is interrupted or killed, the finally block may 
+		// not execute even though the application as a whole continues.
 	}
 	
 }
