@@ -131,6 +131,12 @@ public class Runner {
 		copy(listCamera, listProduct);
 		copy(listCamera, listObjects);
 //		copy(listCamera, listCamera2); // Compilation error
+
+		// DO NOT DO THAT
+		// List<? extends Product> list = new ArrayList<>()
+		// Container<?> holder = ...
+		// public List<? super Product> someWTFMethod() {...}
+		// public Collection<?> someStrangeMethod() {...}
 	}
 	
 }
