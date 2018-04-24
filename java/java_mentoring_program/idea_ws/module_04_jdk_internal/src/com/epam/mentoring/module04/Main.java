@@ -97,7 +97,7 @@ public class Main {
 
         // Classloaders:
         // - bootstrap class loader (classes that return null after call of getClassLoader(), usually loaded by
-        //      bootstrap class loader);
+        //      bootstrap class loader, loads classes from JAVA_HOME\lib);
         // - extension class loader;
         // - system class loader (loads classes from classpath);
         // - user-defined class loaders;
@@ -168,5 +168,27 @@ public class Main {
                 e.printStackTrace();
             }
         }
+
+        // 7. References
+        // Reference<T>
+        // SoftReference<T> | WeakReference<T> | PhantomReference<T>
+
+        // List<SoftReference> is slower than SoftReference<List>
+
+        // For cache Soft reference is more useful than WeakReference
+
+        // Object states:
+        // 1. Created
+        // 2. In Use
+        // 3. Invisible
+        // 4. Unreachable
+        // 5. Collected
+        // 6. Finalized
+        // 7. Phantomly Reachable (for PhantomReference)
+        // 8. Deallocated
+
+        // 8. Books
+        // Java performance
+        // GC Handbook
     }
 }
