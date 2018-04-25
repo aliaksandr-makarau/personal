@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/module_02/module_02.iml" filepath="$PROJECT_DIR$/module_02/module_02.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_03/module_03.iml" filepath="$PROJECT_DIR$/module_03/module_03.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_04_jdk_internal/module_04_jdk_internal.iml" filepath="$PROJECT_DIR$/module_04_jdk_internal/module_04_jdk_internal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_05_spring_basic/module_05_spring_basic.iml" filepath="$PROJECT_DIR$/module_05_spring_basic/module_05_spring_basic.iml" />
     </modules>
   </component>
 </project>

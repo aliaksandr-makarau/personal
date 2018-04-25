@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <bean name="dev" class="com.epam.mentoring.module05.springdemo.beans.Developer">
+        <constructor-arg value="Alex"/>
+        <constructor-arg value="Java"/>
+        <constructor-arg value="3"/>
+        <constructor-arg value="true"/>
+    </bean>
+
+    <bean id="intern" class="com.epam.mentoring.module05.springdemo.beans.Developer">
+        <constructor-arg value="Roman"/>
+    </bean>
+
+    <bean id="dotNetDev" class="com.epam.mentoring.module05.springdemo.beans.Developer">
+        <constructor-arg value="DotNet" index="1"/>
+        <constructor-arg value="Petr" index="0"/>
+        <constructor-arg value="2"/>
+        <constructor-arg value="false"/>
+    </bean>
+
+    <bean id="anonimous" class="com.epam.mentoring.module05.springdemo.beans.Developer">
+        <constructor-arg type="int" value="15"/>
+    </bean>
+
+    <bean id="newProject" name="taxiBumer taxiBiber, taxiPoehali"
+          class="com.epam.mentoring.module05.springdemo.beans.Project">
+        <constructor-arg value="taxiBumer"/>
+        <constructor-arg ref="dev"/>
+    </bean>
+
+    <bean id="Java 10" name="Maybe later" class="com.epam.mentoring.module05.springdemo.beans.Project">
+        <property name="name" value="Java 10, early release"/>
+        <property name="teamLead" ref="teamLead"/>
+    </bean>
+
+    <bean id="teamLead" class="com.epam.mentoring.module05.springdemo.beans.Developer">
+        <property name="name" value="Andrey"/>
+        <property name="skill" value="Java"/>
+        <property name="level" value="10"/>
+        <property name="isCoffeeConsumer">
+            <value type="java.lang.Boolean">true</value>
+        </property>
+    </bean>
+
+</beans>
