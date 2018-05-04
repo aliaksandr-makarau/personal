@@ -2,7 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util-4.0.xsd"
+       xmlns:utils="http://www.springframework.org/schema/util">
 
     <bean name="dev" class="com.epam.mentoring.module05.springdemo.beans.Developer">
         <constructor-arg value="Alex"/>
@@ -45,5 +49,20 @@
             <value type="java.lang.Boolean">true</value>
         </property>
     </bean>
+
+    <bean id="scalaDev" class="com.epam.mentoring.module05.springdemo.beans.Developer"
+          lazy-init="true" scope="prototype">
+        <property name="name" value="Martin"/>
+        <property name="skill" value="Scala"/>
+        <property name="level" value="10"/>
+        <property name="isCoffeeConsumer">
+            <value type="java.lang.Boolean">false</value>
+        </property>
+    </bean>
+
+    <utils:list id="devs" list-class="java.util.ArrayList">
+        <ref bean="scalaDev" />
+        <ref bean="teamLead" />
+    </utils:list>
 
 </beans>

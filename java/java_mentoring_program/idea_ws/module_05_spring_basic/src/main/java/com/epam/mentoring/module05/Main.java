@@ -8,6 +8,8 @@ import com.epam.mentoring.module05.springdemo.beans.Project;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -77,5 +79,30 @@ public class Main {
 
         Project java10 = appContext.getBean("Java 10", Project.class);
         System.out.println(java10);
+
+        // Singletone is the default scope for a bean in Spring
+        Developer scalaIntern = appContext.getBean("scalaDev", Developer.class);
+        scalaIntern.setSkill("Delphi");
+        System.out.println(scalaIntern);
+
+        Developer scalaDev = appContext.getBean("scalaDev", Developer.class);
+        System.out.println(scalaDev);
+
+        System.out.println("Are Scala intern and Scala developer the same? " + (scalaDev == scalaIntern));
+
+        ApplicationContext secondContextInstance = new ClassPathXmlApplicationContext("Beans.xml");
+
+        Developer scalaInternFromSecond = secondContextInstance.getBean("scalaDev", Developer.class);
+        scalaInternFromSecond.setSkill("Delphi");
+        System.out.println(scalaInternFromSecond);
+
+        Developer scalaDevFromSecond = appContext.getBean("scalaDev", Developer.class);
+        System.out.println(scalaDevFromSecond);
+
+        System.out.println("Are Scala intern from First and from Second the same? " +
+                (scalaInternFromSecond == scalaIntern));
+
+        List<Developer> devs = appContext.getBean("devs", List.class);
+        devs.stream().forEach(System.out::println);
     }
 }

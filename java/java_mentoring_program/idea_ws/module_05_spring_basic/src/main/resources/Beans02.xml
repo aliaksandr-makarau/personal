@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util-4.0.xsd"
+       xmlns:utils="http://www.springframework.org/schema/util">
+
+    <bean id="dev" class="com.epam.mentoring.module0502.beans.Developer" lazy-init="true" destroy-method="destroyMe">
+        <property name="name" value="Petja"/>
+        <property name="skill" value="Java"/>
+        <property name="level" value="2"/>
+        <property name="yearsInFramework">
+            <map>
+                <entry key="String" value="3"/>
+                <entry key="Hibernate" value="2"/>
+                <entry key="Mockito" value="1"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="tester" class="com.epam.mentoring.module0502.beans.AutomationTester">
+        <property name="name" value="Vasja"/>
+        <property name="skill" value="Python"/>
+        <property name="level" value="1"/>
+        <property name="favoriteFramework" value="Django"/>
+        <property name="isBro" value="true"/>
+    </bean>
+
+    <bean id="manager" class="com.epam.mentoring.module0502.beans.Manager">
+        <property name="name" value="Ivan Ivanovich"/>
+        <property name="emailPerHour">
+            <utils:constant static-field="java.lang.Math.PI"/>
+        </property>
+        <property name="engineers">
+            <ref bean="pool"/>
+        </property>
+    </bean>
+
+    <utils:set id="pool" set-class="java.util.HashSet">
+        <ref bean="dev"/>
+        <ref bean="tester"/>
+    </utils:set>
+
+    <bean id="project_NYTimes" class="com.epam.mentoring.module0502.beans.Project" init-method="initProject">
+        <constructor-arg value="Backend for NY Times" />
+        <constructor-arg>
+            <list>
+                <ref bean="dev"/>
+                <ref bean="tester"/>
+                <ref bean="manager"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- <bean id="initBean" class="com.epam.mentoring.module0502.init.InitBean"/> -->
+    <bean id="bpp" class="com.epam.mentoring.module0502.init.CustomBeanPostProcessor"/>
+    <bean id="bpp2" class="com.epam.mentoring.module0502.init.CustomBeanPostProcessor2"/>
+    <bean id="destroyBean" class="com.epam.mentoring.module0502.init.DestroyBean"/>
+
+    <bean id="parentEngineer" class="com.epam.mentoring.module0502.beans.Engineer">
+        <property name="name" value="Lenja"/>
+        <property name="level" value="1"/>
+    </bean>
+
+    <bean id="devFromParent"
+          class="com.epam.mentoring.module0502.beans.Developer"
+          lazy-init="true"
+          destroy-method="destroyMe"
+          parent="parentEngineer">
+        <property name="skill" value="C++"/>
+        <property name="level" value="3"/>
+        <property name="yearsInFramework">
+            <map>
+                <entry key="STL" value="3"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="testerFromParent" class="com.epam.mentoring.module0502.beans.AutomationTester" parent="parentEngineer">
+        <property name="skill" value="Perl"/>
+        <property name="level" value="2"/>
+        <property name="favoriteFramework" value="BlaBla"/>
+        <property name="isBro" value="false"/>
+    </bean>
+
+    <bean id="managerFromParent" class="com.epam.mentoring.module0502.beans.Manager" parent="parentEngineer">
+        <property name="emailPerHour" value="10"/>
+        <property name="engineers">
+            <ref bean="pool"/>
+        </property>
+    </bean>
+
+</beans>
