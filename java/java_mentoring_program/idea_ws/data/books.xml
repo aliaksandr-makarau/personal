@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<books>
+
+    <book id="1" pages="800">
+        <title>Java 9</title>
+        <author>Shildt</author>
+    </book>
+
+    <book id="2" pages="400">
+        <title>Scala</title>
+        <author>Horstmann</author>
+    </book>
+
+</books>
