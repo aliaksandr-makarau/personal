@@ -14,6 +14,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_07_jdbc.iml" filepath="$PROJECT_DIR$/.idea/modules/module_07_jdbc.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_07_jdbc_main.iml" filepath="$PROJECT_DIR$/.idea/modules/module_07_jdbc_main.iml" group="module_07_jdbc" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_07_jdbc_test.iml" filepath="$PROJECT_DIR$/.idea/modules/module_07_jdbc_test.iml" group="module_07_jdbc" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_08_web.iml" filepath="$PROJECT_DIR$/.idea/modules/module_08_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_08_web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/module_08_web_main.iml" group="module_08_web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_08_web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/module_08_web_test.iml" group="module_08_web" />
     </modules>
   </component>
 </project>
