@@ -17,6 +17,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_08_web.iml" filepath="$PROJECT_DIR$/.idea/modules/module_08_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_08_web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/module_08_web_main.iml" group="module_08_web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_08_web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/module_08_web_test.iml" group="module_08_web" />
+      <module fileurl="file://$PROJECT_DIR$/module_09_02_spring_boot/module_09_02_spring_boot.iml" filepath="$PROJECT_DIR$/module_09_02_spring_boot/module_09_02_spring_boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_09_spring_mvc/module_09_spring_mvc.iml" filepath="$PROJECT_DIR$/module_09_spring_mvc/module_09_spring_mvc.iml" />
     </modules>
   </component>
 </project>

@@ -12,7 +12,7 @@ import java.util.Random;
 public class Main {
     public static String URL = "jdbc:mysql://localhost:3306/ammcars";
     public static String USER = "root";
-    public static String PASS = "";
+    public static String PASS = "root";
 
     public static void main(String[] args) {
         System.out.println("Java Mentoring Program - Module 07");
