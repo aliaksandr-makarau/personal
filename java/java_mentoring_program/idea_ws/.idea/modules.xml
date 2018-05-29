@@ -21,6 +21,7 @@
       <module fileurl="file://$PROJECT_DIR$/module_09_spring_mvc/module_09_spring_mvc.iml" filepath="$PROJECT_DIR$/module_09_spring_mvc/module_09_spring_mvc.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_10_services/module_10_services.iml" filepath="$PROJECT_DIR$/module_10_services/module_10_services.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_11_rest/module_11_rest.iml" filepath="$PROJECT_DIR$/module_11_rest/module_11_rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_12_hibernate/module_12_hibernate.iml" filepath="$PROJECT_DIR$/module_12_hibernate/module_12_hibernate.iml" />
     </modules>
   </component>
 </project>

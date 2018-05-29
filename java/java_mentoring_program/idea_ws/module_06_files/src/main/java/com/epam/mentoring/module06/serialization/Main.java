@@ -28,6 +28,29 @@ public class Main {
 
         File toRemove = new File("data\\serialization_out.out");
         toRemove.delete();
+
+        BaseSerialization base = new BaseSerialization();
+        ChildSerialization child = new ChildSerialization();
+        base.childOne = child;
+        base.childTwo = child;
+
+        System.out.println(base);
+        System.out.println(base.childOne);
+        System.out.println(base.childTwo);
+
+        OutputStream baseOut = new FileOutputStream("data\\base.out");
+        ObjectOutputStream baseOutputStream = new ObjectOutputStream(baseOut);
+        baseOutputStream.writeObject(base);
+        baseOutputStream.flush();
+        baseOutputStream.close();
+
+        InputStream baseIn = new FileInputStream("data\\base.out");
+        ObjectInputStream baseInputStream = new ObjectInputStream(baseIn);
+
+        BaseSerialization baseInDeserializable = (BaseSerialization) baseInputStream.readObject();
+        System.out.println(baseInDeserializable);
+        System.out.println(baseInDeserializable.childOne);
+        System.out.println(baseInDeserializable.childTwo);
     }
 }
 
@@ -40,4 +63,14 @@ class TestSerialize implements Serializable {
 
     public byte version = 100;
     public byte count = 2;
+}
+
+class ChildSerialization implements Serializable {
+    public int i = 10;
+}
+
+class BaseSerialization implements Serializable {
+    public int i = 5;
+    public ChildSerialization childOne = new ChildSerialization();
+    public ChildSerialization childTwo = new ChildSerialization();
 }
