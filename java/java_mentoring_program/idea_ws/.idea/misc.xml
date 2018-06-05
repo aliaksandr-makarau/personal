@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/module_10_services/pom.xml" />
         <option value="$PROJECT_DIR$/module_11_rest/pom.xml" />
         <option value="$PROJECT_DIR$/module_12_hibernate/pom.xml" />
+        <option value="$PROJECT_DIR$/module_13_multithreading/pom.xml" />
       </list>
     </option>
   </component>

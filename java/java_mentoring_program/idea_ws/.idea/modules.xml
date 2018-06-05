@@ -22,6 +22,7 @@
       <module fileurl="file://$PROJECT_DIR$/module_10_services/module_10_services.iml" filepath="$PROJECT_DIR$/module_10_services/module_10_services.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_11_rest/module_11_rest.iml" filepath="$PROJECT_DIR$/module_11_rest/module_11_rest.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_12_hibernate/module_12_hibernate.iml" filepath="$PROJECT_DIR$/module_12_hibernate/module_12_hibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_13_multithreading/module_13_multithreading.iml" filepath="$PROJECT_DIR$/module_13_multithreading/module_13_multithreading.iml" />
     </modules>
   </component>
 </project>
