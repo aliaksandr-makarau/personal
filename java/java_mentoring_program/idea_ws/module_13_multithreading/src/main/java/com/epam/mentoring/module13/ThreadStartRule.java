@@ -4,6 +4,62 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+class VariableHolder {
+    private int variable = 0;
+
+    private static Object obj = new Object();
+
+    public synchronized int getVariable() {
+            System.out.println("VariableHolder::getVariable() START");
+            System.out.println("VariableHolder::getVariable() END");
+            return variable;
+    }
+
+    public void setVariable(int variable) {
+        synchronized (this) {
+
+            System.out.println("VariableHolder::setVariable() START");
+
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println("VariableHolder::setVariable() END");
+
+            this.variable = variable;
+        }
+    }
+}
+
+class VariableReader implements Runnable {
+
+    private VariableHolder holder;
+
+    VariableReader(VariableHolder h) {
+        holder = h;
+    }
+
+    @Override
+    public void run() {
+        System.out.println(holder.getVariable());
+    }
+}
+
+class VariableWriter implements Runnable {
+    private VariableHolder holder;
+
+    VariableWriter(VariableHolder h) {
+        holder = h;
+    }
+
+    @Override
+    public void run() {
+        holder.setVariable(13);
+    }
+}
+
 public class ThreadStartRule {
     public static void main(String[] args) throws InterruptedException {
 
@@ -81,5 +137,16 @@ public class ThreadStartRule {
         // lockIII.unlock(); // Deadlock :(
         System.out.println("Step 3.4");
 
+        // PART IV
+        VariableHolder holder = new VariableHolder();
+
+        Thread t1IV = new Thread(new VariableReader(holder));
+        Thread t2IV = new Thread(new VariableWriter(holder));
+
+        t2IV.start();
+        t1IV.start();
+
+        t2IV.join();
+        t1IV.join();
     }
 }

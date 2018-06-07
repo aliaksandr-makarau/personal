@@ -1,7 +1,5 @@
 package com.epam.mentoring.module13;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 public class Main4 {
     public static void main(String[] args) throws InterruptedException {
         LightCruiser varyag = new LightCruiser();
